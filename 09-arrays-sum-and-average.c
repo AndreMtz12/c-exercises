@@ -24,12 +24,37 @@
 int main(void) {
     int numbers[MAX_NUMBERS];
     int count = 0;
+    int sum;
+    double average;
 
+    printf("How many numbers (1-10)? ");
+    scanf("%d",&count);
+    
+    
     // TODO: ask for count and validate it is between 1 and MAX_NUMBERS.
+    
+    
+    while (count<0 || count>MAX_NUMBERS)
+    {
+        printf("Please enter a valid number: ");
+        scanf("%d",&count);
+    }
 
     // TODO: read values into the array using a loop.
+    for (int i = 0; i < count; i++) 
+    {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+        sum += numbers[i];
+    }   
+
 
     // TODO: compute sum and average, then print them.
+
+    average=(double)sum/count;
+
+    printf("Sum: %d\n", sum);
+    printf("Average: %.1f\n", average);
 
     return 0;
 }
