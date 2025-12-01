@@ -24,11 +24,34 @@ int main(void) {
     int data[MAX_LENGTH];
     int length = 0;
 
+    printf("How many numbers (1-8)?");
+    scanf("%d", &length);
     // TODO: ask for length and ensure it is between 1 and MAX_LENGTH.
-
+    while (length<0||length>8)
+    {
+        printf("Please enter a valid number: ");
+        scanf("%d",&length);
+    }
     // TODO: read values into the array using a loop.
 
+        for (int i=0; i<length; i++)
+        {
+            printf("Value %d: ",i+1);
+            scanf("%d",&data[i]);
+        }
+        printf("You entered: ");
+    for (int i = 0; i < length; i++) {
+        printf("%d ", data[i]);
+    }
+
+   
+
     // TODO: print values in original order, then print them in reverse order.
+
+    printf("Reversed: ");
+    for (int i = length - 1; i >= 0; i--) {
+        printf("%d ", data[i]);
+    }
 
     return 0;
 }
